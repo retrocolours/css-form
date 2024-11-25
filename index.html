@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <form class="form" action="post">
+        <h1>Signup</h1>
+
+        <fieldset>
+          <legend>
+            <span class="number">1</span>
+            <span class="text">Account Info</span>
+          </legend>
+          <div class="inputs">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Full name..."
+              required
+            />
+          </div>
+          <div class="inputs">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address..."
+              required
+            />
+          </div>
+          <div class="inputs">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password..."
+              required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}"
+            />
+            <p>Minimum 12 Characters.</p>
+            <p>Must include uppercase, lowercase, number, and symbol.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            <span class="number">2</span>
+            <span class="text">Dev Skills</span>
+          </legend>
+          <h4>Core Languages</h4>
+          <div class="checkboxes">
+            <label
+              ><input type="checkbox" name="languages[]" value="HTML" />
+              HTML</label
+            >
+            <label
+              ><input type="checkbox" name="languages[]" value="CSS" />
+              CSS</label
+            >
+            <label
+              ><input type="checkbox" name="languages[]" value="JavaScript" />
+              JavaScript</label
+            >
+            <label
+              ><input type="checkbox" name="languages[]" value="PHP" />
+              PHP</label
+            >
+            <label
+              ><input type="checkbox" name="languages[]" value="C#" /> C#</label
+            >
+            <label
+              ><input type="checkbox" name="languages[]" value="Kotlin" />
+              Kotlin</label
+            >
+          </div>
+          <h4>Libraries / Frameworks</h4>
+          <div class="checkboxes">
+            <label
+              ><input type="checkbox" name="frameworks[]" value="React" />
+              React</label
+            >
+            <label
+              ><input type="checkbox" name="frameworks[]" value="Angular" />
+              Angular</label
+            >
+            <label
+              ><input type="checkbox" name="frameworks[]" value="Vue.js" />
+              Vue.js</label
+            >
+          </div>
+          <h4>Dev Ops</h4>
+          <div class="checkboxes">
+            <label
+              ><input type="checkbox" name="devops[]" value="GIT" /> GIT</label
+            >
+            <label
+              ><input type="checkbox" name="devops[]" value="Gulp" />
+              Gulp</label
+            >
+            <label
+              ><input type="checkbox" name="devops[]" value="Docker" />
+              Docker</label
+            >
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            <span class="number">3</span>
+            <span class="text">Experience</span>
+          </legend>
+          <div class="radios">
+            <label
+              ><input
+                type="radio"
+                name="experience"
+                value="Beginner"
+                required
+              />
+              Beginner</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="experience"
+                value="Intermediate"
+                required
+              />
+              Intermediate</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="experience"
+                value="Advanced"
+                required
+              />
+              Advanced</label
+            >
+          </div>
+        </fieldset>
+
+        <fieldset class="other-section">
+          <legend>
+            <span class="number">4</span>
+            <span class="text">Other</span>
+          </legend>
+          <div class="other-box">
+            <label for="other-referral" class="other-label"
+              >How did you hear about us?</label
+            >
+            <select
+              id="other-referral"
+              name="referral"
+              class="other-select"
+              onchange="handleAlternativeChoice()"
+            >
+              <option value="" disabled selected>Please Select...</option>
+              <optgroup label="Person">
+                <option value="Friend">Friend</option>
+                <option value="Family">Family</option>
+                <option value="Colleague">Colleague</option>
+              </optgroup>
+              <optgroup label="Media">
+                <option value="Internet">Internet</option>
+                <option value="Radio">Radio</option>
+                <option value="TV">TV</option>
+                <option value="Newspaper">Newspaper</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option value="Magic!">Magic!</option>
+                <option value="Other...">Other...</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="other-box hidden" id="other-details-box">
+            <label for="other-details" class="other-label"
+              >Provide Details</label
+            >
+            <textarea
+              id="other-details"
+              name="details"
+              class="other-textarea"
+              rows="2"
+              placeholder="Provide additional details..."
+            ></textarea>
+          </div>
+          <div class="other-box">
+            <label for="other-comments" class="other-label">Comments</label>
+            <textarea
+              id="other-comments"
+              name="comments"
+              class="other-textarea"
+              rows="6"
+              placeholder="Comments"
+            ></textarea>
+          </div>
+        </fieldset>
+
+        <div class="buttons">
+          <button type="submit" class="other-submit-btn">Submit</button>
+          <button type="reset" class="other-clear-btn">Clear Form</button>
+        </div>
+      </form>
+    </main>
+    <footer>Tatiana Privezentseva © 2024</footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
